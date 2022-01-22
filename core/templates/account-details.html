@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>{{account.website}}</h1>
+
+<h2>{{account.username}} - {{account.email}} - {{account.password}}</h2>
+
+<p>{{account.description}}</p>
+<br>
+<a href="{% url 'accounts' %}">Назад</a>
+
+{% endblock content %}
