@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Аккаунты</h1>
+
+<table style="border-spacing: 10px">
+    <tr>
+        <th>Сайт</th>
+        <th>Имя пользователя</th>
+        <th>Почта</th>
+        <th>Пароль</th>
+        <th>Добавлено</th>
+    </tr>
+    {% for account in accounts %}
+        <tr>
+            <td>{{account.website}}</td>
+            <td>{{account.username}}</td>
+            <td>{{account.email}}</td>
+            <td>{{account.password}}</td>
+            <td>{{account.created}}</td>
+            <td><a href="{% url 'account-details' account.id %}">Подробнее</a></td>
+            <td><a href="{% url 'edit-account' account.id %}">Изменить</a></td>
+            <td><a href="{% url 'delete-account' account.id %}">Удалить</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

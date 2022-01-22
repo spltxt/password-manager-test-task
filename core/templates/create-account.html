@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>Добавить Аккаунт</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+</form>
+
+<br>
+<a href="{% url 'accounts' %}">Назад</a>
+
+{% endblock content %}
